@@ -10,7 +10,7 @@
   // the `unsavedModels` collection, otherwise remove it.
   var updateUnsavedModels = function(model) {
     if (!_.isEmpty(model._unsavedChanges)) {
-      if (!_.findWhere(unsavedModels, {cid:model.cid})) unsavedModels.push(model);
+      if (!_.find(unsavedModels, {cid:model.cid})) unsavedModels.push(model);
     } else {
       unsavedModels = _.filter(unsavedModels, function(m) { return model.cid != m.cid; });
     }
